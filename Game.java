@@ -55,3 +55,81 @@ public class Game extends JPanel implements KeyListener, ActionListener {
 		g2d.drawString(scoreB, 10, height / 2);
 		g2d.drawString(scoreT, width - 50, height / 2);
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (ballX < 0 || ballX > width - ballSize) {
+			velX = -velX;
+		}
+		
+		if (ballY < 0) {
+			velY = -velY;
+			++ scoreBottom;
+		}
+		
+		if (ballY + ballSize > height) {
+			velY = -velY;
+			++ scoreTop;
+		}
+
+		if (ballY + ballSize >= height - padH - inset && velY > 0)
+			if (ballX + ballSize >= bottomPadX && ballX <= bottomPadX + padW)
+				velY = -velY;
+
+		
+		if (ballY <= padH + inset && velY < 0)
+			if (ballX + ballSize >= topPadX && ballX <= topPadX + padW)
+				velY = -velY;
+
+		ballX += velX;
+		ballY += velY;
+		
+		if (keys.size() == 1) {
+			if (keys.contains("LEFT")) {
+				bottomPadX -= (bottomPadX > 0) ? SPEED : 0;
+			}
+			else if (keys.contains("RIGHT")) {
+				bottomPadX += (bottomPadX < width - padW) ? SPEED : 0;
+			}
+		}
+		
+		double delta = ballX - topPadX;
+		if (delta > 0) {
+			topPadX += (topPadX < width - padW) ? SPEED : 0;
+		}
+		else if (delta < 0) {
+			topPadX -= (topPadX > 0) ? SPEED : 0;
+		}
+		
+		repaint();
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int code = e.getKeyCode();
+		switch (code) {
+		case KeyEvent.VK_LEFT:
+			keys.add("LEFT");
+			break;
+		case KeyEvent.VK_RIGHT:
+			keys.add("RIGHT");
+			break;
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		int code = e.getKeyCode();
+		switch (code) {
+		case KeyEvent.VK_LEFT:
+			keys.remove("LEFT");
+			break;
+		case KeyEvent.VK_RIGHT:
+			keys.remove("RIGHT");
+			break;
+		}
+	}
+}
