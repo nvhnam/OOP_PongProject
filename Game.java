@@ -2,10 +2,10 @@ import java.awt.*;
 
 public class Game extends JPanel implements KeyListener, ActionListener {
   private int height, width;
-  private Timer t  = new Timer(5, this);
+  private Timer t  = new Timer(3, this);
   private boolean first;
   private Hashset<String> keys = HashSet<String>();
-  private final int SPEED = 1;
+  private final int SPEED = 1.5;
   private int padH = 10, padW = 40;
   private int bottomPadX, topPadX;
   private int insert = 10;
