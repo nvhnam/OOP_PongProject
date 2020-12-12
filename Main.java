@@ -8,7 +8,7 @@ public class Main {
 		Game g = new Game();
 		frm.setContentPane(g);
 		frm.setSize(700, 600);
-		frm.setResizable(false);
+		frm.setResizeable(false);
 		frm.setVisible(true);
 		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
