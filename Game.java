@@ -50,10 +50,10 @@ public class Game extends JPanel implements KeyListener, ActionListener {
 		g2d.fill(ball);
 		
 		
-		String scoreB = "Bottom: " + new Integer(scoreBottom).toString();
-		String scoreT = "Top: " + new Integer(scoreTop).toString();
-		g2d.drawString(scoreB, 10, height / 2);
-		g2d.drawString(scoreT, width - 50, height / 2);
+		String scoreB = "Player 2: " + new Integer(scoreBottom).toString();
+		String scoreT = "Player 1: " + new Integer(scoreTop).toString();
+		g2d.drawString(scoreB, 25, height / 4);
+		g2d.drawString(scoreT, width - 65, height / 4);
 	}
 
 	@Override
