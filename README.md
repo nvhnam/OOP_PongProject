@@ -1,6 +1,6 @@
 # OOP_PongProject
 NGUYEN VIET HOANG NAM_ITITIU19162\
-HUYNH DUC PHAT_ITITIU19177\
+HUYNH DUC PHAT_ITITIU19177
 
 Our project has 7 classes in this Pong game:
 
