@@ -4,7 +4,7 @@ HUYNH DUC PHAT_ITITIU1917
 
 Our project has 7 classes in this Pong game:
 
-* __Game.java:__ It contains all the game objects and uses seperated thread to update the game physics. This class extends Canvas to draw and implements Runnable to run the game loop.
+* __Game.java:__ It contains all the game objects and uses seperated thread to manage, update the game physics.
 * __Window.java:__ It has JFrame and adds the Game Canvas to it.
 * __Ball.java:__ Properties for the ball to bounce.
 * __Paddle.java:__ Properties for 2 paddles to move and properties for the Game score.
