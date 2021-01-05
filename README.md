@@ -9,5 +9,5 @@ Our project has 7 classes in this Pong game:
 * __Ball.java:__ Properties for the ball to bounce.
 * __Paddle.java:__ Properties for 2 paddles to move and properties for the Game score.
 * __KeyInput.java:__ It contains the commands to make both paddles moving.
-* __MainMenu.java:__ It displays the "Play" or "Quit" at the start of the game.
+* __Menu.java:__ It displays the "Play" or "Quit" at the start of the game.
 * __Test.java:__ It will run the Game.
